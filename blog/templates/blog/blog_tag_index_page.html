@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
+{% endblock %}
+{% load wagtailcore_tags %}
+{% block body_class %}template-blogtagindexpage{% endblock %}
+
+{% block content %}
+    <div class="gray-block-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <span>// Blog de desenvolvimento</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container single-content">
+        <div class="row">
+                <div class="col-12">
+                    {% if request.GET.tag|length %}
+                        <h2>Páginas com a tag {{ request.GET.tag }}</h2>
+                    {% endif %}
+                </div>
+        </div>
+        {% for blogpage in resources %}
+        <div class="row">
+            <div class="col-12">
+                <h3 class="result-link"><a href="{% pageurl blogpage %}">{{ blogpage.title }}</a></h3>
+                {% if blogpage.owner %}
+                    <p>{{ blogpage.intro|richtext }}</p>
+                    <hr/>
+                {% endif %}
+            </div>
+        </div>
+        {% empty %}
+        <div class="row">
+            <div class="col-12">
+                Nada foi encontrado.
+            </div>
+        </div>
+        {% endfor %}
+        <div class="row">
+            <div class="col-12">
+                <ul class="pagination">
+                    {% if resources.has_previous %}
+                        <li><a class="pagelink" href="?page={{ resources.previous_page_number }}"><i class="fa fa-angle-left"></i></a></li>
+                    {% endif %}
+                    {% for page_num in resources.paginator.page_range %}
+                        <li> 
+                            {% if page_num == resources.number %}
+                                <a class="active-pagelink" href="?page={{ page_num }}">{{ page_num }}</a>
+                                {% else %}
+                                <a class="pagelink" href="?page={{ page_num }}">{{ page_num }}</a>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                    {% if resources.has_next %}
+                        <li><a class="pagelink" href="?page={{ resources.next_page_number }}"><i class="fa fa-angle-right"></i></a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,182 @@
+canvas {
+    display: block;
+    position: absolute;
+    z-index: -1;
+}
+
+h4 {
+    text-decoration: none;
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#no-posts {
+    padding-top: 5rem;
+    padding-bottom: 13rem;
+}
+
+#text-anim {
+    text-decoration: underline;
+    text-decoration-color: #2dfc68;
+}
+
+#lead-text {
+    padding-top: 5rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+@media (max-width: 576px) {
+    #lead-text {
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+#text-anim:before {
+    content: 'autônomos';
+    animation-name: head;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes head {
+    0% {font-size:100%; opacity:1;}
+    20% {font-size:100%; opacity:1; content: "autônomos"}
+    60% {font-size:100%; opacity:1; content: "elétricos"}
+}
+
+#h2-index {
+    padding-top: 0.9rem;
+    font-weight: 700;
+    color: #000000;
+    font-size: 1rem;
+}
+
+#card-index-title {
+    margin-left: 1.5rem;
+    color: #ffffff;
+    font-size: 1.25rem;
+}
+
+#dev-blog-link {
+    float: right;
+    margin-right: 1.5rem;
+    margin-bottom: 3rem;
+    margin-top: -1rem;
+    color: #ffffff;
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+
+#dev-blog-link:hover {
+    color: #e8e8e8;
+}
+
+#card-toggle {
+    border: 0;
+}
+
+.particles-js-canvas-el {
+    background: #000000;
+    max-height: 40rem;
+}
+
+.white-block {
+    background: #ffffff;
+}
+
+.gray-block {
+    background: #f7f7f7;
+}
+
+.rich-text h1 {
+    text-decoration: none;
+    color: #000000;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.rich-text h2 {
+    text-decoration: none;
+    color: #000000;
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.rich-text h3 {
+    text-decoration: none;
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.home-card {
+    margin: 1.5rem;
+    margin-top: 0.5rem;
+    background: #000000;
+    border-color: #ffffff;
+    border-radius: 0rem;
+}
+
+.home-card:hover {
+    background: #000000;
+    border-color: #2dfc68;
+    cursor: pointer;
+}
+
+.home-card:active {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ffffff;
+}
+
+.home-card-body {
+    padding: 0.5rem;
+}
+
+.card-blog-post-title {
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.card-blog-post-body {
+    color: #c2c2c2;
+    font-weight: 400;
+}
+
+a.card-anchor-wrap {
+    text-decoration: none;
+}
+
+.bold-title {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.bullet-point {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.bullet-point-row {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}

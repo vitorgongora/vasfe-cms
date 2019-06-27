@@ -1,0 +1,121 @@
+h1 {
+    text-decoration: none;
+    color: #000000;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 8px;
+}
+
+h2 {
+    text-decoration: none;
+    color: #000000;
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 8px;
+}
+
+h3 {
+    text-decoration: none;
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 8px;
+}
+
+h4 {
+    text-decoration: none;
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 8px;
+}
+
+.gray-block-top {
+    background: #f8f8f8;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.gray-block-top span {
+    font-weight: 700;
+    color: #000000;
+    font-size: 1.25rem;
+}
+
+.pagelink {
+    text-decoration: none;
+    padding-right: 2px;
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.pagelink:hover {
+    text-decoration: none;
+    color: #1849ce;
+}
+
+.active-pagelink {
+    text-decoration: none;
+    padding-right: 2px;
+    color: #1849ce;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.active-pagelink:hover {
+    text-decoration: none;
+    color: #1849ce;
+}
+
+.post-title {
+    color: #000000;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 0;
+}
+
+.post-title:hover {
+    color: #1849ce;
+}
+
+.post-title a {
+    text-decoration: none;
+}
+
+a.side-title {
+    text-decoration: none;
+}
+
+.result-link a {
+    text-decoration: none;
+}
+
+.post-meta-header {
+    margin-bottom: 0;
+}
+
+.single-content {
+    padding-bottom: 1.5rem;
+}
+
+.center-main-img {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+img.richtext-image {
+    display: block;
+    margin: 0 auto;
+}
+
+.pagination {
+    float: right;
+}

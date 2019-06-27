@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
+{% endblock %}
+{% block body_class %}template-blogindexpage{% endblock %}
+
+{% block content %}
+    <div class="gray-block-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <span>// Blog de desenvolvimento</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+            {% for post in resources %}
+                <div>
+                {% with post=post.specific %}
+                    <h2 class="post-title"><a href="{% pageurl post %}">{{ post.title }}</a></h2>
+                    <p>{{ post.date }} | {{ post.owner }}</p>
+                    {% with post.main_image as main_image %}
+                            {% if main_image %}{% image main_image fill-710x300 %}{% endif %}
+                    {% endwith %}
+                    <p>{{ post.intro|richtext }}</p>
+                    <a href="{% pageurl post %}" class="btn btn-dark shadow-none">Ler mais</a>
+                {% endwith %}
+                </div>
+                <hr/>
+            {% endfor %}
+                <ul class="pagination">
+                    {% if resources.has_previous %}
+                        <li><a class="pagelink" href="?page={{ resources.previous_page_number }}"><i class="fa fa-angle-left"></i></a></li>
+                    {% endif %}
+                    {% for page_num in resources.paginator.page_range %}
+                        <li> 
+                            {% if page_num == resources.number %}
+                                <a class="active-pagelink" href="?page={{ page_num }}">{{ page_num }}</a>
+                                {% else %}
+                                <a class="pagelink" href="?page={{ page_num }}">{{ page_num }}</a>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                    {% if resources.has_next %}
+                        <li><a class="pagelink" href="?page={{ resources.next_page_number }}"><i class="fa fa-angle-right"></i></a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <form action="{% url 'search' %}" method="get">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Pesquise aqui" aria-label="Pesquise aqui" aria-describedby="basic-addon2"
+                        name="query"{% if search_query %} value="{{ search_query }}"{% endif %}>
+                        <div class="input-group-append">
+                            <button class="btn btn-dark shadow-none" type="submit" value="Search">Pesquisar</button>
+                        </div>
+                    </div>
+                </form>
+                <h2>Mais acessados</h2>
+                <hr/>
+                {% for post in page.most_viewed_posts %}
+                    <div>
+                        {% with post=post.specific %}
+                            <h4><a class="side-title" href="{% pageurl post %}">{{ post.title }}</a></h4>
+                            <div class="justify-text">
+                                {{ post.intro|richtext }}
+                            </div>
+                        {% endwith %}
+                    </div>
+                {% endfor %}
+                <h2>Núcleos</h2>
+                <hr/>
+                    <a class="btn btn-dark btn-full-width-side shadow-none" href="/blog/cats/?cat=Núcleo+de+Pesquisa%2c+Desenvolvimento+e+Inovação" role="button">
+                    Núcleo de Pesquisa, Desenvolvimento e Inovação</a>
+                    <a class="btn btn-dark btn-full-width-side shadow-none" href="/blog/cats/?cat=Núcleo+de+Desenvolvimento+Fotoelétrico" role="button">
+                    Núcleo de Desenvolvimento Fotoelétrico</a>
+                    <a class="btn btn-dark btn-full-width-side shadow-none" href="/blog/cats/?cat=Núcleo+de+Eletrônica+de+Potência" role="button">
+                    Núcleo de Eletrônica de Potência</a>
+                    <a class="btn btn-dark btn-full-width-side shadow-none" href="/blog/cats/?cat=Núcleo+de+Desenvolvimento+do+Carregador+Elétrico" role="button">
+                    Núcleo de Desenvolvimento do Carregador Elétrico</a>
+                    <a class="btn btn-dark btn-full-width-side shadow-none" href="/blog/cats/?cat=Núcleo+de+Navegação+Autônoma" role="button">
+                    Núcleo de Navegação Autônoma</a>
+                    <a class="btn btn-dark btn-full-width-side shadow-none" href="/blog/cats/?cat=Núcleo+de+Desenvolvimento+Mecânico+e+Estético" role="button">
+                    Núcleo de Desenvolvimento Mecânico e Estético</a>
+                    <a class="btn btn-dark btn-full-width-side shadow-none" href="/blog/cats/?cat=Núcleo+de+Fomento+e+Financiamento" role="button">
+                    Núcleo de Fomento e Financiamento</a>
+                    <a class="btn btn-dark btn-full-width-side shadow-none" href="/blog/cats/?cat=Núcleo+de+Desenvolvimento+de+Motores" role="button">
+                    Núcleo de Desenvolvimento de Motores</a>
+                    <a class="btn btn-dark btn-full-width-side shadow-none" href="/blog/cats/?cat=Núcleo+de+Controle+de+Sistemas" role="button">
+                    Núcleo de Controle de Sistemas</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

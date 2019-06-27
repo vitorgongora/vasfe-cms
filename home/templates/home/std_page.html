@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+{% endblock %}
+{% load wagtailcore_tags %}
+{% block body_class %}template-stdpage{% endblock %}
+
+{% block content %}
+    <div class="white-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="bold-title">{{ page.title }}</h2>
+                    {{ page.first_block_text|richtext }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

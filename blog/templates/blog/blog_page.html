@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
+{% endblock %}
+{% block body_class %}template-blogpage{% endblock %}
+
+{% block content %}
+    <div class="gray-block-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <span class="blog-index-title">// Blog de desenvolvimento</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container single-content">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="post-title"><a href="#">{{ page.title }}</a></h1>
+                <p class="post-meta-header">{{ page.date }} | {{page.owner}} | {{ page.counter }} visualizações</p>
+                <p>
+                    {% with categories=page.categories.all %}
+                        {% if categories|length > 1 %}
+                            {% for category in categories %}
+                                {{ category.name }}{% if not forloop.last %}, {% endif %} 
+                            {% endfor %}
+                        {% else %}
+                            {% for category in categories %}
+                                {{ category.name }}
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="intro">
+                    <div class="center-main-img">
+                        {% image page.main_image width-720 %}
+                    </div>
+                    <div class="content-body justify-text">
+                        {{ page.intro|richtext }}
+                    </div>
+                </div>
+                <div class="content-body justify-text">
+                    {{ page.body|richtext }}
+                </div>
+                {% if page.tags.all.count %}
+                    <div class="tags">
+                        <h3>Tags</h3>
+                        {% for tag in page.tags.all %}
+                            <a href="{% slugurl 'tags' %}?tag={{ tag }}" class="btn btn-dark shadow-none">{{ tag }}</a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

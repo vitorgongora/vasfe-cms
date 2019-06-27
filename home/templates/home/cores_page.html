@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+{% endblock %}
+{% load wagtailcore_tags %}
+{% block body_class %}template-corespage{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% if page.first_block %}
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="bold-title">{{ page.first_block }}</h2>
+                </div>
+            </div>
+            <div class="row justify-text">
+                <div class="col-12">
+                    {{ page.first_block_text|richtext }}
+                </div>
+            </div>
+        {% endif %}
+        <div id="accordion">
+            {% for core in page.cores.all %}
+                <div id="card-toggle">
+                        <div id="heading{{ core.id }}">
+                            <h5 class="mb-0">
+                                <button class="btn btn-dark btn-full-width-side shadow-none" data-toggle="collapse" data-target="#collapse{{ core.id }}" aria-expanded="false" aria-controls="collapse{{ core.id }}">
+                                    {{ core.first_block }}
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapse{{ core.id }}" class="collapse" aria-labelledby="heading{{ core.id }}" data-parent="#accordion">
+                            <div class="card-body justify-text">
+                                {{ core.first_block_text|richtext }}
+                            </div>
+                        </div>
+                    </div>
+            {% endfor %}
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-12 col-lg-6 justify-text">
+                <h2 class="bold-title" style="margin-top: 0rem;">{{ page.second_block }}</h2>
+                    {{ page.second_block_text|richtext }}
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <img src="{% static 'images/group_pic.png'%}"/>
+            </div>
+        </div>
+    </div>
+{% endblock %}

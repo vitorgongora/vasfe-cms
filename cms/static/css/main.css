@@ -1,0 +1,148 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9rem;
+    background-color: #ffffff;
+}
+
+html {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+hr {
+    border-color: #f3f3f3;
+}
+
+a {
+    color: #000000;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #1849ce;
+}
+
+li {
+    list-style-type: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#footer {
+    background: #000000;
+    color: #ffffff;
+    margin-top: 2rem;
+    padding-top: 10px;
+    min-height: 50px;
+}
+
+#footer-logo {
+    width: 150px;
+    padding-bottom: 20px;
+}
+
+.navbar-toggler:focus, .navbar-toggler:active, .navbar-toggler:hover {
+    outline: none;
+    border: 1px solid #bdbdbd;
+}
+
+.content {
+    min-height: calc(100vh - 193.5px);
+}
+
+.justify-text {
+    text-align: justify;
+}
+
+:focus, :active {
+    outline: 0;
+    border: 0;
+}
+
+.navbar {
+    background-color: #000000;
+}
+
+.navbar-brand {
+    min-width: 200px;
+    position: relative;
+}
+
+.navbar-nav > li{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.nav-link {
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.nav-link:hover {
+    color: #e8e8e8 !important;
+    font-weight: 700;
+}
+
+.social-media {
+    float: right;
+    text-decoration: none;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.social-media-footer {
+    margin-top: 5px;
+}
+
+.form-control {
+    font-size: 0.8rem;
+    border-radius: 0;
+    border-color: #000000;
+    transition: none;
+}
+
+.form-control:focus {
+    color: #000000;
+    box-shadow: none;
+    border: 1px solid #000000;
+}
+
+.btn {
+    font-size: 0.8rem;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 0;
+    border-width: 0;
+    padding: 5px 10px; 
+}
+
+.btn-dark {
+    background-color: #000000;
+}
+
+.btn-dark:hover {
+    background-color: #1849ce;
+}
+
+.btn-full-width-side {
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 576px) {
+    .row {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    body {
+        overflow-x: hidden;  
+    }
+}
