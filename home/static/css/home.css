@@ -16,7 +16,14 @@ h4 {
 
 #no-posts {
     padding-top: 5rem;
-    padding-bottom: 13rem;
+    padding-bottom: 14rem;
+}
+
+@media (max-width: 576px) {
+    #no-posts {
+        padding-top: 5rem;
+        padding-bottom: 14rem;
+    }    
 }
 
 #text-anim {

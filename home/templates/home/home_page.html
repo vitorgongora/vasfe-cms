@@ -50,7 +50,8 @@
                                 </div>
                                 <div class="row justify-content-center">
                                         {% for item in page.gallery_images.all %}
-                                                <span {% if not forloop.last %} style="padding-bottom: 1rem; padding-right: 1rem;" {% endif %}>
+                                                <span {% if not forloop.last %} style="padding-bottom: 1rem; padding-right: 1rem;" 
+                                                {% else %} style="padding-bottom: 1rem;" {% endif %}>
                                                         {% image item.image max-100x300 alt=item.caption%}
                                                 </span>
                                         {% endfor %}
