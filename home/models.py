@@ -18,6 +18,14 @@ class HomePage(Page):
     first_block = models.CharField("Título do primeiro bloco", max_length=255, blank=True)
     second_block = models.CharField("Título do segundo bloco", max_length=255, blank=True)
     second_block_text = RichTextField("Texto 1", blank=True)
+    second_block_image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+    )
+
     content_panels = Page.content_panels + [
         MultiFieldPanel(
         [
@@ -38,6 +46,7 @@ class HomePage(Page):
         [
             FieldPanel('second_block'),
             FieldPanel('second_block_text'),
+            ImageChooserPanel('second_block_image'),
         ],
         heading="Segundo bloco",
         classname="collapsible collapsed"
@@ -83,6 +92,13 @@ class CoresPage(Page):
     first_block_text = RichTextField("Texto inicial", blank=True)
     second_block = models.CharField("Título", max_length=255, blank=True)
     second_block_text = RichTextField("Texto 1", blank=True)
+    second_block_image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+    )
 
     content_panels = Page.content_panels + [
         MultiFieldPanel(
@@ -104,6 +120,7 @@ class CoresPage(Page):
         [
             FieldPanel('second_block'),
             FieldPanel('second_block_text'),
+            ImageChooserPanel('second_block_image'),
         ],
         heading="Call to action",
         classname="collapsible collapsed"
