@@ -92,13 +92,7 @@ h4 {
 
 .particles-js-canvas-el {
     background: #000000;
-    max-height: 60rem;
-}
-
-@media (max-width: 767.98px) {
-    .particles-js-canvas-el {
-        height: 50rem !important;
-    }
+    height: 50rem !important;
 }
 
 .white-block {

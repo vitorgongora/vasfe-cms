@@ -3,7 +3,7 @@
 {% block extra_css %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
 {% endblock %}
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
 {% block body_class %}template-corespage{% endblock %}
 
 {% block content %}
@@ -45,7 +45,7 @@
                     {{ page.second_block_text|richtext }}
             </div>
             <div class="col-md-6 col-lg-6">
-                <img src="{% static 'images/group_pic.png'%}"/>
+                {% image page.second_block_image fill-579x228 %}
             </div>
         </div>
     </div>
