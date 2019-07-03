@@ -184,6 +184,11 @@ a.card-anchor-wrap {
 }
 
 .bullet-point-row {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.credit {
+    font-size: 0.6rem;
+    color: gray;
 }

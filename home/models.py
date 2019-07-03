@@ -16,8 +16,15 @@ class HomePage(Page):
         return blogs
     
     first_block = models.CharField("Título do primeiro bloco", max_length=255, blank=True)
+    first_block_image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+    )
+    first_block_credits = RichTextField("Texto 1", blank=True)
     second_block = models.CharField("Título do segundo bloco", max_length=255, blank=True)
-    second_block_text = RichTextField("Texto 1", blank=True)
     second_block_image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
@@ -25,6 +32,7 @@ class HomePage(Page):
         on_delete=models.SET_NULL,
         related_name='+',
     )
+    second_block_text = RichTextField("Créditos da imagem", blank=True)
 
     content_panels = Page.content_panels + [
         MultiFieldPanel(
@@ -38,6 +46,8 @@ class HomePage(Page):
         [
             FieldPanel('first_block'),
             InlinePanel('topics', label="Tópico"),
+            ImageChooserPanel('first_block_image'),
+            FieldPanel('first_block_credits'),
         ],
         heading="Primeiro bloco",
         classname="collapsible collapsed"
