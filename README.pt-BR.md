@@ -33,7 +33,7 @@ Baixe o arquivo ZIP ou clone usando git:<br/>
 git clone https://github.com/vitorgongora/vasfe-cms.git
 cd vasfe-cms
 ```
-Instale o binário dp PostgreSQL 12 https://www.enterprisedb.com/downloads/postgres-postgresql-downloads<br/>
+Instale o binário do PostgreSQL 12 https://www.enterprisedb.com/downloads/postgres-postgresql-downloads<br/>
 
 Instale os pacotes necessários:
 ```bash
