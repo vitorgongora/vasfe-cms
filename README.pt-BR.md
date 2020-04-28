@@ -4,7 +4,7 @@ Código fonte para o site do VASFE, criado com o Wagtail, um CMS baseado em Djan
 :us: [README in English](https://github.com/vitorgongora/vasfe-cms/blob/master/README.pt-BR.md)
 ## Instruções de instalação
 ### Linux (Ubuntu)
-Você deve ter no mínimo Python 3.5 instalado (cheque com ``python3 --version```).<br/>
+Você deve ter no mínimo Python 3.5 instalado (cheque com ``python3 --version``).<br/>
 
 Baixe o arquivo ZIP ou clone usando git:<br/>
 ```bash
