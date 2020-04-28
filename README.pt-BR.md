@@ -26,7 +26,7 @@ python3 -m pip install psycopg2-binary
 ```
 
 ### Windows
-Você deve ter no mínimo Python 3.5 instalado (cheque com ``python3 --version```).<br/>
+Você deve ter no mínimo Python 3.5 instalado (cheque com ``python3 --version``).<br/>
 
 Baixe o arquivo ZIP ou clone usando git:<br/>
 ```bash
