@@ -20,8 +20,8 @@ python3 -m pip install --user virtualenv
 virtualenv vasfe_cms_env
 source vasfe_cms_env/bin/activate
 python3 -m pip install --upgrade Pillow
-python3 -m pip install django===2.2
-python3 -m pip install wagtail===2.4
+python3 -m pip install 'Django>=2.2,<2.3'
+python3 -m pip install 'wagtail>=2.7,<2.8'
 python3 -m pip install psycopg2-binary
 ```
 
@@ -42,8 +42,8 @@ python3 -m pip install --user virtualenv
 virtualenv vasfe_cms_env
 source vasfe_cms_env/bin/activate
 python3 -m pip install --upgrade Pillow
-python3 -m pip install django===2.2
-python3 -m pip install wagtail===2.4
+python3 -m pip install 'Django>=2.2,<2.3'
+python3 -m pip install 'wagtail>=2.7,<2.8'
 python3 -m pip install psycopg2-binary
 ```
 
