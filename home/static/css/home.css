@@ -90,9 +90,14 @@ h4 {
     border: 0;
 }
 
+.heading {
+    position: relative;
+    height: 100%;
+}
+
 .particles-js-canvas-el {
+    height: 100% !important;
     background: #000000;
-    height: 50rem !important;
 }
 
 .white-block {
