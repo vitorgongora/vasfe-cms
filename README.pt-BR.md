@@ -1,4 +1,6 @@
 # :books: vasfe-cms
+![](https://github.com/vitorgongora/vasfe-cms/workflows/Continuous%20deployment/badge.svg)
+
 Código fonte para o site do VASFE, criado com o Wagtail, um CMS baseado em Django.
 
 :us: [README in English](https://github.com/vitorgongora/vasfe-cms/blob/master/README.pt-BR.md)
@@ -20,8 +22,7 @@ python3 -m pip install --user virtualenv
 virtualenv vasfe_cms_env
 source vasfe_cms_env/bin/activate
 python3 -m pip install --upgrade Pillow
-python3 -m pip install 'Django>=2.2,<2.3'
-python3 -m pip install 'wagtail>=2.7,<2.8'
+python3 -m pip install -r requirements.txt
 python3 -m pip install psycopg2-binary
 ```
 
@@ -31,7 +32,6 @@ Você deve ter no mínimo Python 3.5 instalado (cheque com ``python3 --version``
 Baixe o arquivo ZIP ou clone usando git:<br/>
 ```bash
 git clone https://github.com/vitorgongora/vasfe-cms.git
-cd vasfe-cms
 ```
 Instale o binário do PostgreSQL 12 https://www.enterprisedb.com/downloads/postgres-postgresql-downloads<br/>
 
@@ -42,8 +42,7 @@ python3 -m pip install --user virtualenv
 virtualenv vasfe_cms_env
 source vasfe_cms_env/bin/activate
 python3 -m pip install --upgrade Pillow
-python3 -m pip install 'Django>=2.2,<2.3'
-python3 -m pip install 'wagtail>=2.7,<2.8'
+python3 -m pip install -r requirements.txt
 python3 -m pip install psycopg2-binary
 ```
 
