@@ -16,7 +16,9 @@
         </title>
         <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
         <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
-        <meta name="description" content="" />
+        {% if self.search_description %}
+        <meta name="description" content="{{ self.search_description }}" />
+        {% endif %}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {# Global Fonts #}
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
@@ -48,9 +50,6 @@
                                 <a class="nav-link" href="/nucleos">Núcleos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/blog">Tecnologias</a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link" href="/contato">Contato</a>
                             </li>
                         </ul>
@@ -80,7 +79,7 @@
                         <a class="social-media" href="#">
                             <img border="0" alt="Facebook" src="{% static 'images/facebook.svg' %}" width="30" height="30">
                         </a>
-                        <a class="social-media" href="#">
+                        <a class="social-media" href="https://www.instagram.com/vasfeuem/">
                             <img border="0" alt="Instagram" src="{% static 'images/instagram.svg' %}" width="30" height="30">
                         </a>
                     </div>
