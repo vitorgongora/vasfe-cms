@@ -1,5 +1,4 @@
 # :books: vasfe-cms
-![](https://github.com/vitorgongora/vasfe-cms/workflows/Continuous%20deployment/badge.svg)
 
 Source code for VASFE's website built with Wagtail, a Django Content Management System.
 
